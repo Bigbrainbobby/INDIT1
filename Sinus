@@ -1,0 +1,68 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jul 24 13:40:54 2023
+
+@author: Chrysanthos
+"""
+
+
+import numpy as np
+
+import matplotlib.pyplot as plot
+
+ 
+
+#Eingabe für die x-Werte 
+try:
+    
+    a = int(input("Bitte den Start der Werte für die Sinuskurve eingeben(INTEGER): "))
+    b = int(input("Bitte das Ende der Werte für die Sinuskurve eingeben(INTEGER): "))
+    c = float(input("Bitte die Genauigkeit der Werte für die Sinuskurve eingeben(FLOAT, z.b 0.1): "))
+
+except:
+    print("Ihre Were waren nicht zulässig, bitte für den Start und das Ende einen Integer, und für die Zwischenschritte einen Float eingeben!")
+  
+
+time        = np.arange(a, b, c);
+
+ 
+
+
+#y - Werte mit Sinusfunktion
+amplitude   = np.sin(time)
+
+ 
+
+#Plot
+
+plot.plot(time, amplitude)
+
+ 
+
+# Titel des Plots
+
+plot.title('Sinus Kurve')
+
+ 
+
+# x-Achsen-Beschriftung
+
+plot.xlabel('x')
+
+ 
+
+# y-Achsen-Beschriftung
+
+plot.ylabel('Amplitude,')
+
+ 
+# Raster (optional)
+#plot.grid(True, which='both')
+
+ 
+#Farbe für die Linie des Plots
+plot.axhline(y=0, color='k')
+
+# Plot-Funktion ruft den Graphen auf
+
+plot.show()
